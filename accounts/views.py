@@ -8,29 +8,42 @@ from django.utils import timezone
 from django.http import JsonResponse
 from django.conf import settings
 import stripe
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse, HttpResponseBadRequest
+
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
+
+@csrf_exempt
 def create_checkout_session(request):
     if request.method == 'POST':
-        amount = int(request.POST.get('amount', 0)) * 100  # amount in dollars, convert to cents
-        session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
-            line_items=[{
-                'price_data': {
-                    'currency': 'usd',  # <-- use USD for dollars
-                    'product_data': {
-                        'name': 'Donation',
+        try:
+            amount = int(request.POST.get('amount', 0)) * 100  # amount in dollars, convert to cents
+            if not amount:
+                return HttpResponseBadRequest("Amount is required.")
+            stripe.api_key = settings.STRIPE_SECRET_KEY
+            session = stripe.checkout.Session.create(
+                payment_method_types=['card'],
+                line_items=[{
+                    'price_data': {
+                        'currency': 'usd',
+                        'product_data': {
+                            'name': 'Donation',
+                        },
+                        'unit_amount': amount,
                     },
-                    'unit_amount': amount,
-                },
-                'quantity': 1,
-            }],
-            mode='payment',
-            success_url=request.build_absolute_uri('/donate-success/'),
-            cancel_url=request.build_absolute_uri('/donate-cancel/'),
-        )
-        return JsonResponse({'id': session.id})
+                    'quantity': 1,
+                }],
+                mode='payment',
+                success_url=request.build_absolute_uri('/donate-success/'),
+                cancel_url=request.build_absolute_uri('/donate-cancel/'),
+            )
+            return JsonResponse({'id': session.id})
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=500)
+    return HttpResponseBadRequest("Invalid request method.")
+
 
 def home(request):
     upcoming_events = Event.objects.filter(date__gte=timezone.now()).order_by('date')
