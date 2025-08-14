@@ -13,3 +13,4 @@ urllib3==2.5.0
 whitenoise==6.9.0
 python-dotenv
 stripe
+Pillow
