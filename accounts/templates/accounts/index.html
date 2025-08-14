@@ -1,0 +1,335 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iman Jibril Foundation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p1Cm+M4gy2uWI4kDqm/9uRmgSCvA8HW7kkfg5wM+YC9pB8Hy11Ti3DGJsKkp+O38iCr1ZiYQ5YHW85rZf4d0NQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+       <img src="{% static 'images/imanJ.png' %}"  alt="ImanJibril" >
+    </div>
+    <div class="nav-buttons">
+      <a href="{% url 'volunteer' %}"><button class="btn volunteer">VOLUNTEER</button></a>
+      <a href="{% url 'donate' %}"><button class="btn donate">DONATE</button></a>
+      <a href="{% url 'profile' %}" class="btn profile-btn">Profile</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Making the world a better place for all </h1>
+      <a href="#"><button class="btn watch-more">JOIN US</button></a>
+    </div>
+   <div class="slideshow">
+  <div class="slide active" style="background-image:url('{% static "images/IMG9.jpg" %}')"></div>
+  <div class="slide" style="background-image:url('{% static "images/IMG7.jpg" %}')"></div>
+  <div class="slide" style="background-image:url('{% static "images/IMG8.jpg" %}')"></div>
+  <div class="slide" style="background-image:url('{% static "images/img4.jpg" %}')"></div>
+  <div class="slide" style="background-image:url('{% static "images/img2.jpeg" %}')"></div>
+</div>
+  </header>
+
+  <section class="aboutus-section">
+    <div class="aboutus-container">
+      <div class="aboutus-image">
+        <img src="{% static 'images/about.jpg' %}" alt="IMAN Jibril Foundation">
+      </div>
+      <div class="aboutus-text">
+        <h2>About Us</h2>
+        <span class="aboutus-bar"></span>
+        <p>
+          The Iman Jibril Charity Foundation was founded in 2022 by Mrs. Ikram Ahmed in honor of her children, Iman and Jibril. What began as a mother’s personal mission is now a continent-wide movement to restore hope, dignity, and opportunity for underserved communities. From its roots in the Eastern Region of Ghana, the Foundation has grown into a force for change building schools, clinics, and programs that touch thousands of lives.
+          <br><br>
+          Inspired by Ikram’s own journey from refugee child to global entrepreneur, our work is a living legacy of resilience and compassion. We don’t do charity as usual. We build for generations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-cards-section">
+  <div class="about-cards-container">
+    <div class="about-card">
+      <i class="fas fa-hands-helping"></i>
+      <h5>Our Mission</h5>
+      <p>Empowering communities through education, health, and sustainable development.</p>
+    </div>
+    <div class="about-card">
+      <i class="fas fa-award"></i>
+      <h5>Recognized Impact</h5>
+      <p>Awarded for outstanding service and community transformation.</p>
+    </div>
+    <div class="about-card">
+      <i class="fas fa-globe-africa"></i>
+      <h5>Global Reach</h5>
+      <p>Serving diverse communities across Africa and beyond.</p>
+    </div>
+  </div>
+</section>
+
+  <div style="width:100%; overflow:hidden; margin:0; padding:0;">
+    <img src="{% static 'images/pattern.png' %}" alt="Section Separator Pattern" style="width:100%; display:block;">
+  </div>
+
+  <section class="content">
+    <!-- left column -->
+    <div class="content-text">
+      <h1>360° Community Development Programme</h1>
+      <p>
+        By confronting today’s most urgent challenges,
+        Iman Jibril Foundation employs a comprehensive, multifaceted strategy to strengthen communities in need.
+        This full-circle development programme is devoted to breaking the persistent cycle of hunger, 
+        poverty and unemployment throughout Africa and the world at large.
+      </p>
+    </div>
+    <!-- right column -->
+    <div class="content-image">
+      <ul class="program-list">
+        <li class="program-item feeding">
+          <i class="fas fa-utensils"></i>
+          <span class="label">Feeding Programme</span>
+        </li>
+        <li class="program-item water">
+          <i class="fas fa-water"></i>
+          <span class="label">Water Supply Solutions</span>
+        </li>
+        <li class="program-item women">
+          <i class="fas fa-ribbon"></i>
+          <span class="label">Women Empowerment</span>
+        </li>
+        <li class="program-item education">
+          <i class="fas fa-sun"></i>
+          <span class="label">Education</span>
+        </li>
+        <li class="program-item vocational">
+          <i class="fas fa-tools"></i>
+          <span class="label">Vocational Training</span>
+        </li>
+        <li class="program-item agricultural">
+          <i class="fas fa-seedling"></i>
+          <span class="label">Agricultural Sustainability</span>
+        </li>
+        <li class="program-item health">
+          <i class="fas fa-heart"></i>
+          <span class="label">Health Care</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="programs-slider-section">
+  <h2 class="programs-title">Our Programs</h2>
+  <div class="programs-slider" id="programsSlider">
+    <div class="program-slide active">
+      <img src="{% static 'images/IMG11.jpg' %}" alt="Feeding Programme" class="program-img">
+      <h3>Feeding Programme</h3>
+      <p>
+        Our Feeding Programme provides nutritious meals to children and families in need, ensuring no one goes hungry. We partner with local communities to deliver food support and promote healthy living.
+      </p>
+    </div>
+    <div class="program-slide">
+      <img src="{% static 'images/img2.jpeg' %}" alt="Water Supply Solutions" class="program-img">
+      <h3>Water Supply Solutions</h3>
+      <p>
+        We implement sustainable water projects, including wells and filtration systems, to provide clean and safe water to underserved communities, reducing waterborne diseases and improving quality of life.
+      </p>
+    </div>
+    <div class="program-slide">
+      <img src="{% static 'images/woman.jpg' %}" alt="Women Empowerment" class="program-img">
+      <h3>Women Empowerment</h3>
+      <p>
+        Our Women Empowerment initiatives offer skills training, microfinance, and mentorship, enabling women to become leaders and entrepreneurs in their communities.
+      </p>
+    </div>
+    <div class="program-slide">
+      <img src="{% static 'images/edu.jpg' %}" alt="Education" class="program-img">
+      <h3>Education</h3>
+      <p>
+        We build and support schools, provide scholarships, and supply learning materials to ensure every child has access to quality education and a brighter future.
+      </p>
+    </div>
+    <div class="program-slide">
+      <img src="{% static 'images/IMG7.jpg' %}" alt="Vocational Training" class="program-img">
+      <h3>Vocational Training</h3>
+      <p>
+        Our vocational programs equip youth and adults with practical skills for employment and entrepreneurship, breaking the cycle of poverty.
+      </p>
+    </div>
+    <div class="program-slide">
+      <img src="{% static 'images/farm.jpg' %}" alt="Agricultural Sustainability" class="program-img">
+      <h3>Agricultural Sustainability</h3>
+      <p>
+        We promote sustainable farming techniques and provide resources to help communities achieve food security and environmental stewardship.
+      </p>
+    </div>
+    <div class="program-slide">
+      <img src="{% static 'images/img4.jpg' %}" alt="Health Care" class="program-img">
+      <h3>Health Care</h3>
+      <p>
+        Our health initiatives include medical outreach, clinics, and health education to improve well-being and save lives in vulnerable communities.
+      </p>
+    </div>
+    <!-- Add more slides as needed -->
+    <button class="programs-arrow prev">&#10094;</button>
+    <button class="programs-arrow next">&#10095;</button>
+  </div>
+</section>
+
+  <section class="impact-section">
+  <div class="impact-flex">
+    <div class="impact-left">
+      <h2>See Our Impact</h2>
+      <p>
+        Discover how your support is transforming lives. From building schools and clinics to empowering women and providing clean water, our projects are making a real difference in communities across Africa.
+      </p>
+    </div>
+    <div class="impact-right">
+      <video id="impactVideo" class="impact-video" autoplay muted controls playsinline loop>
+  <source src="{% static 'videos/IMAN2.mp4' %}" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    var vid = document.getElementById('impactVideo');
+    vid.playbackRate = 0.7; // 0.5 is half speed, 1 is normal
+  });
+</script>
+    </div>
+  </div>
+</section>
+
+</section>
+<div class="impact-map-container" style="width:100%; max-width:700px; margin:32px auto; text-align:center; position:relative;">
+    <img src="{% static 'images/MAP.jpg' %}" alt="Where We Serve - Africa Map" class="impact-map-image" style="width:100%; height:auto; max-width:100vw; display:block; border-radius:12px; object-fit:contain;">
+</div>
+<section class="cta-cards-section">
+  <div class="cta-cards-container">
+    <div class="cta-card donate">
+      <div class="cta-icon">
+        <i class="fas fa-hand-holding-heart"></i>
+      </div>
+      <h3>Donate</h3>
+      <p>Your contribution, big or small, goes a long way.</p>
+      <a href="{% url 'donate' %}" class="cta-btn">SUPPORT US</a>
+    </div>
+    <div class="cta-card in-kind">
+      <div class="cta-icon">
+        <i class="fas fa-box-heart"></i>
+      </div>
+      <h3>Donate In Kind</h3>
+      <p>Your support can make a meaningful difference and directly impact those in need.</p>
+      <a href="#" class="cta-btn">CONTACT US</a>
+    </div>
+    <div class="cta-card volunteer">
+      <div class="cta-icon">
+        <i class="fas fa-hands-helping"></i>
+      </div>
+      <h3>Volunteer</h3>
+      <p>Put your compassion into action by volunteering your time and skills.</p>
+      <a href="{% url 'volunteer' %}" class="cta-btn">JOIN US</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer Section -->
+  <footer class="footer-dark">
+    <div class="footer-logo">
+      <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" />
+    </div>
+    <div class="footer-container">
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-people-group" style="font-size:15px; color:aliceblue;"></i> Iman Jibril Foundation<br /></p>
+        <p><i class="fas fa-map-marker-alt" style="color:beige;"></i> Head Office: Iris Street, Accra, Ghana</p>
+        <p><i class="fas fa-phone" style="color:beige;"></i> Phone/WhatsApp: ‪+233 55 613 7874‬</p>
+        <p><i class="fas fa-envelope" style="color:beige;"></i> <a href="#">donte@theimangroup.com</a> </p>
+        <p><i class="fab fa-instagram" style="height:35px;"> </i> <a href="#">@imanjfoundation</a></p>
+        <p><em>An Initiative of Iman Jibril Foundation</em></p>
+      </div>
+      <!-- Links -->
+      <div class="footer-column">
+        <h4>Other Links</h4>
+        <ul>
+          <li><a href="#">Mother Care Drive</a></li>
+          <li><a href="#">Feeding Festival & Birthday Drive</a></li>
+          <li><a href="#">How You Can Help</a></li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div class="footer-column">
+        <h4>Stay Informed</h4>
+        <p>Join our email newsletter to learn more.</p>
+        <form class="newsletter-form" method="post">
+          {% csrf_token %}
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit">JOIN NOW</button>
+        </form>
+      </div>
+      <div class="footer-bottom">&copy; <span id="year">Iman Jibril Foundation. All Rights Reserved.</span></div>
+    </div>
+    <hr class="white-line" />
+  </footer>
+  <script src="{% static 'scripts.js' %}"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.program-slide');
+  const prevBtn = document.querySelector('.programs-arrow.prev');
+  const nextBtn = document.querySelector('.programs-arrow.next');
+  let current = 0;
+  let autoSlide;
+
+  function showSlide(idx) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === idx);
+    });
+    current = idx;
+  }
+
+  function nextSlide() {
+    showSlide((current + 1) % slides.length);
+  }
+
+  function prevSlide() {
+    showSlide((current - 1 + slides.length) % slides.length);
+  }
+
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    resetAuto();
+  });
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    resetAuto();
+  });
+
+  function startAuto() {
+    autoSlide = setInterval(nextSlide, 5000); // 5 seconds per slide
+  }
+  function resetAuto() {
+    clearInterval(autoSlide);
+    startAuto();
+  }
+
+  showSlide(0);
+  startAuto();
+});
+</script>
+</body>
+</html>

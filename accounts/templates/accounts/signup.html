@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - IMAN NGO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        html, body {
+            background: #f9fafb;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            max-width: 100vw;
+            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .signup-logo {
+            display: block;
+            margin: 40px auto 20px auto;
+            max-width: 180px;
+            width: 70%;
+        }
+        .signup-title {
+            text-align: center;
+            color: #12550f;
+            margin-bottom: 18px;
+            font-size: 1.38rem;
+            font-weight: bold;
+            letter-spacing: 0.02em;
+        }
+        .signup-form-container {
+            max-width: 410px;
+            width: 100%;
+            margin: 0 auto 38px auto;
+            background: #f9fafb;
+            padding: 34px 26px 26px 26px;
+            border-radius: 1.2rem;
+            box-shadow: 0 2px 16px rgba(18,85,15,0.07);
+        }
+        .signup-form-container input,
+        .signup-form-container select,
+        .signup-form-container textarea {
+            width: 97%;
+            padding: 11px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: 1px solid #d0dd94;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        .signup-form-container textarea {
+            resize: vertical;
+        }
+        .signup-form-container button {
+            width: 98%;
+            padding: 12px;
+            background: #12550f;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.09rem;
+            margin-bottom: 8px;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+        .signup-form-container button:hover {
+            background: #0e440c;
+        }
+        .signup-form-container a {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+            color: #4ab78e;
+            text-decoration: none;
+            font-size: 1.03rem;
+        }
+        .success-message {
+            color: #12550f;
+            background: #e6f9e6;
+            text-align: center;
+            padding: 12px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        @media (max-width: 600px) {
+            body {
+                justify-content: flex-start;
+                padding: 18px 0;
+            }
+            .signup-logo {
+                max-width: 100px;
+                width: 58vw;
+                margin: 22px auto 10px auto;
+            }
+            .signup-title {
+                font-size: 1.12rem;
+                margin-bottom: 12px;
+            }
+            .signup-form-container {
+                max-width: 90vw;
+                width: 90vw;
+                margin: 0 auto 24px auto;
+                padding: 17px 6px 15px 6px;
+                border-radius: 1rem;
+                box-shadow: 0 2px 8px rgba(18,85,15,0.07);
+            }
+            .signup-form-container input,
+            .signup-form-container select,
+            .signup-form-container textarea,
+            .signup-form-container button {
+                font-size: 1.07rem;
+                padding: 13px;
+            }
+            .signup-form-container a {
+                font-size: 1.06rem;
+            }
+        }
+        @media (max-width: 370px) {
+            .signup-form-container {
+                padding: 9px 2vw 7px 2vw;
+            }
+            .signup-logo {
+                max-width: 58px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'home' %}">
+       <img src="{% static 'images/imanJ.png' %}" alt="Iman Jibril Foundation Logo" class="signup-logo">
+    </a>
+    <div class="signup-title">Sign up to volunteer</div>
+    <div class="signup-form-container">
+        <div class="success-message">REGISTER</div>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Username *" required>
+            <input type="text" name="first_name" placeholder="First Name *" required>
+            <input type="text" name="last_name" placeholder="Last Name *" required>
+            <select name="gender" required>
+                <option value="">Gender *</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="number" name="age" placeholder="Age *" min="1" required>
+            <input type="text" name="mobile" placeholder="Mobile Number *" required>
+            <input type="email" name="email" placeholder="Email *" required>
+            <input type="password" name="password" placeholder="Password *" required>
+            <input type="text" name="availability" placeholder="Availability *" required>
+            <textarea name="comments" placeholder="Additional Comments" rows="3"></textarea>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="{% url 'login' %}">Already have an account? Sign in</a>
+    </div>
+</body>
+</html>
