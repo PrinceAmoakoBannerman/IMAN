@@ -96,6 +96,9 @@ def donate_view(request):
     }
     return render(request, 'accounts/donate.html', context)
 
+from django.contrib.auth.decorators import login_required
+
+@login_required(login_url='/accounts/login/')
 def volunteer_view(request):
     context = {}
     if request.method == 'POST':
