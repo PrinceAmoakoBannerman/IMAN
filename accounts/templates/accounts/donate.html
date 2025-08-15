@@ -170,27 +170,27 @@
       <img src="{% static 'images/IMG9.jpg' %}" alt="Feed a child">
       <div class="donate-desc">Feed a child for a school year</div>
       <div class="donate-amount">
-        $15 X 
-        <input type="number" min="1" value="1" id="donate-qty-1" onchange="updateTotal(1, 15)">
-        = $<span id="donate-total-1">15</span>
+        $50 X 
+        <input type="number" min="1" value="1" id="donate-qty-1" onchange="updateTotal(1, 50)">
+        = $<span id="donate-total-1">50</span>
       </div>
-      <button type="button" class="donate-btn" onclick="payWithStripe(15, 'donate-qty-1')">Donate</button>
+      <button type="button" class="donate-btn" onclick="payWithStripe(50, 'donate-qty-1')">Donate</button>
     </div>
     <!-- Card 2 -->
     <div class="donate-card">
       <img src="{% static 'images/IMG7.jpg' %}" alt="Sponsor meals">
-      <div class="donate-desc">On your special day (i.e. birthday, anniversary) sponsor at least 100 meals for the day (example: $8 = 100 meals, $16 = 200 meals, $80 = 1000)</div>
+      <div class="donate-desc">On your special day (i.e. birthday, anniversary) sponsor at least 100 meals for the day (example: $100 = 100 meals, $200 = 200 meals, $800 = 1000)</div>
       <div class="donate-amount">
-        $8 X 
+        $100 X 
         <input type="number" min="1" value="1" id="donate-qty-2" onchange="updateTotal(2, 8)">
-        = $<span id="donate-total-2">8</span>
+        = $<span id="donate-total-2">100</span>
       </div>
-      <button type="button" class="donate-btn" onclick="payWithStripe(8, 'donate-qty-2')">Donate</button>
+      <button type="button" class="donate-btn" onclick="payWithStripe(100, 'donate-qty-2')">Donate</button>
     </div>
     <!-- Card 3 -->
     <div class="donate-card">
       <img src="{% static 'images/img4.jpg' %}" alt="Build classroom">
-      <div class="donate-desc">Help build a new classroom</div>
+      <div class="donate-desc">Help Build School , Clinic or Medical Supply</div>
       <div class="donate-amount">
         $500 X 
         <input type="number" min="1" value="1" id="donate-qty-3" onchange="updateTotal(3, 500)">
