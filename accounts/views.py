@@ -14,7 +14,11 @@ from django.http import JsonResponse, HttpResponseBadRequest, HttpResponse
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-
+def create_admin(request):
+    if User.objects.filter(username="admin").exists():
+        return HttpResponse("Admin user already exists.")
+    User.objects.create_superuser("admin", "admin@email.com", "yourpassword123")
+    return HttpResponse("Admin user created.")
 
 @csrf_exempt
 def create_checkout_session(request):

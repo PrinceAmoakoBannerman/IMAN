@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost",
+    "https://iman-qjgv.onrender.com",
     "http://127.0.0.1",
     "https://ngo-ehfb.onrender.com",
 ]

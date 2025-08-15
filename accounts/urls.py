@@ -18,4 +18,5 @@ urlpatterns = [
     path('profile/', views.profile_view, name='profile'),
     path('volunteer/', views.volunteer_view, name='volunteer'),
     path('stripe-webhook/', views.stripe_webhook, name='stripe_webhook'),
+    path('create-admin/', views.create_admin, name='create_admin'),
 ]
