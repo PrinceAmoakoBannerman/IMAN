@@ -85,9 +85,7 @@ WSGI_APPLICATION = 'iman_site.wsgi.application'
 
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgres://iman_user:bannnerman@localhost:5432/iman_db'
-    )
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
 
 # Password validation
