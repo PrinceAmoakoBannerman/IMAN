@@ -28,6 +28,6 @@ class Event(models.Model):
     date = models.DateField()
     location = models.CharField(max_length=128)
     image = models.ImageField(upload_to='event_images/', blank=True, null=True)  # Add this line
-
+    image_url = models.URLField("Cloudinary Image URL", blank=True, null=True)
     def __str__(self):
         return self.name

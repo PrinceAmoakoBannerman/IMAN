@@ -35,6 +35,8 @@ ALLOWED_HOSTS = ['iman-qjgv.onrender.com', 'localhost', '127.0.0.1']
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
+    'cloudinary',
+    'cloudinary_storage',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -42,6 +44,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost",
