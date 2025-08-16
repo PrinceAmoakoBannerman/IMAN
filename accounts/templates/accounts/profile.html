@@ -199,9 +199,9 @@
                 <div class="events-list">
                     {% for event in upcoming_events %}
                         <div class="event-card">
-                            {% if event.image %}
-                                <img src="{{ event.image.url }}" alt="{{ event.name }}">
-                            {% endif %}
+                         {% if event.image %}
+                            <img src="{{ event.image.url }}" alt="{{ event.name }}">
+                         {% endif %}
                             <strong>{{ event.name }}</strong>
                             <span>{{ event.description }}</span>
                             <span><strong>Date:</strong> {{ event.date }}</span>
