@@ -158,12 +158,30 @@
             <input type="number" name="age" placeholder="Age *" min="1" required>
             <input type="text" name="mobile" placeholder="Mobile Number *" required>
             <input type="email" name="email" placeholder="Email *" required>
-            <input type="password" name="password" placeholder="Password *" required>
+            <div style="position: relative; width: 97%; margin-bottom: 15px;">
+    <input type="password" name="password" id="password" placeholder="Password *" required style="width: 100%; padding-right: 40px;">
+    <span id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+        &#128065; <!-- Unicode eye icon -->
+    </span>
+</div>
             <input type="text" name="availability" placeholder="Availability *" required>
             <textarea name="comments" placeholder="Additional Comments" rows="3"></textarea>
             <button type="submit">Sign Up</button>
         </form>
         <a href="{% url 'login' %}">Already have an account? Sign in</a>
     </div>
+    
+<script>
+document.getElementById('togglePassword').addEventListener('click', function () {
+    var passwordInput = document.getElementById('password');
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        this.innerHTML = '&#128064;'; // Unicode eye with pupil
+    } else {
+        passwordInput.type = 'password';
+        this.innerHTML = '&#128065;'; // Unicode eye
+    }
+});
+</script>
 </body>
 </html>
